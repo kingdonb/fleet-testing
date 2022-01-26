@@ -3,28 +3,10 @@ kind: Ingress
 metadata:
   name: keycloak
   namespace: production
-  annotations:
-    something-else: a different annotation
+  annotations: {}
 spec:
-  ingressClassName: internal
-  tls:
-    - hosts:
-      - keycloak.hephy.pro
-      secretName: keycloak-hephy-pro
-    - hosts:
-      - other.hephy.pro
-      secretName: keycloak-hephy-pro
+  tls: []
   rules:
-  - host: keycloak.hephy.pro
-    http:
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: keycloak
-              port:
-                number: 8080
   - host: other.hephy.pro
     http:
       paths:
