@@ -9,10 +9,10 @@ spec:
   ingressClassName: internal
   tls:
     - hosts:
-      - keycloak.hephy.pro
-      secretName: keycloak-hephy-pro
+      - not-keycloak.hephy.pro
+      secretName: not-keycloak-hephy-pro
   rules:
-  - host: keycloak.hephy.pro
+  - host: not-keycloak.hephy.pro
     http:
       paths:
         - path: /
