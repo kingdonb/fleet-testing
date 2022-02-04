@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-name: influxdb-volume
-namespace: kingdon
-labels:
-  kustomize.toolkit.fluxcd.io/prune: disabled
+  name: influxdb-volume
+  namespace: kingdon
+  labels:
+    kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
   # storageClassName: aws-gp2-dynamic
   accessModes:
