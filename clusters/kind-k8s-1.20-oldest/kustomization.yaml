@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
 - flux-system
 - ../../apps/root
+images:
+- name: ghcr.io/fluxcd/kustomize-controller
+  newName: somma/kustomize-controller
+  newTag: rc-f7e83795a4f
