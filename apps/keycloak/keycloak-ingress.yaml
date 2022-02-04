@@ -7,10 +7,6 @@ metadata:
     something-else: a different annotation
 spec:
   ingressClassName: internal
-  tls:
-    - hosts:
-      - not-keycloak.hephy.pro
-      secretName: not-keycloak-hephy-pro
   rules:
   - host: not-keycloak.hephy.pro
     http:
