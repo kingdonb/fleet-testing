@@ -1,0 +1,28 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: othertest
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./apps/other-test
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: fleet-testing
+  targetNamespace: kingdon
+  validation: client
+  patchesStrategicMerge:
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: server
+    spec:
+      replicas: 1
+      template:
+        spec:
+          containers:
+          - name: server
+            env:
+            - name: DATABASE_URL
+              value: mysql://user:password@112.7.96.2:3306/database
